@@ -27,12 +27,16 @@ def index():
 
 @app.route('/release')
 def release():
-  return github_request(f'https://api.github.com/repos/{os.environ.get("OWNER")}/{os.environ.get("REPO")}/releases')
+  return github_request(
+      f'https://api.github.com/repos/{os.environ.get("OWNER")}/{os.environ.get("REPO")}/releases'
+  )
 
 
 @app.route('/most_3_recent/release')
 def most_3_recent__release():
-  return github_request(f'https://api.github.com/repos/{os.environ.get("OWNER")}/{os.environ.get("REPO")}/releases?per_page=3')
+  return github_request(
+      f'https://api.github.com/repos/{os.environ.get("OWNER")}/{os.environ.get("REPO")}/releases?per_page=3'
+  )
 
 
 if __name__ == '__main__':
