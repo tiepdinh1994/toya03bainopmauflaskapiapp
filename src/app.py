@@ -22,17 +22,17 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-  pass  #todo
+  return {}
 
 
 @app.route('/release')
 def release():
-  pass  #todo
+  return github_request(f'https://api.github.com/repos/{os.environ.get("OWNER")}/{os.environ.get("REPO")}/releases')
 
 
 @app.route('/most_3_recent/release')
 def most_3_recent__release():
-  pass  #todo
+  return github_request(f'https://api.github.com/repos/{os.environ.get("OWNER")}/{os.environ.get("REPO")}/releases?per_page=3')
 
 
 if __name__ == '__main__':

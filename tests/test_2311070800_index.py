@@ -8,3 +8,4 @@ class Test:
     r = c.get('/')
     assert r.status_code == 200
     assert r.json == {}
+    print(r.json)
